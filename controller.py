@@ -4,11 +4,10 @@
 #from shortened
 #Request is used to encapsulate HTTP request. It will contain request
 #methods, request arguments and other related information
-#from flask import redirect, render_template, request, Flask
-#from werkzeug.exceptions import BadRequest, NotFound
+from flask import redirect, render_template, request, Flask
+from werkzeug.exceptions import BadRequest, NotFound
 
 import models
-from flask import Flask , render_template
 
 # Initialize Flask application
 app = Flask(__name__, template_folder='views')
