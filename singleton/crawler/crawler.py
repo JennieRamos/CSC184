@@ -6,11 +6,16 @@ import urllib
 from urlparse import urlparse, urljoin
 from BeautifulSoup import BeautifulSoup
 
+class Url_imageGet(object):
+  def __init__(self , url):
+    self.url = url
+
 class Singleton(object):
   def __new__(cls):
     if not hasattr(cls, 'instance'):
       cls.instance = super(Singleton, cls).__new__(cls)
     return cls.instance
+
 
 class ImageDownloaderThread(threading.Thread):
     """A thread for downloading images in parallel."""
@@ -115,7 +120,7 @@ def download_images(thread_name):
       print thread_name, 'finished downloading images from', url
 
 if __name__ == '__main__':
-  root = 'http://python.org'
+  root = 'http://localhost/pic.html'
 
   parsed_root = urlparse(root)
 
