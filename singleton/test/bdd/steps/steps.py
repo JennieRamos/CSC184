@@ -16,9 +16,9 @@ def when_i_run_the_crawler_py(step):
     assert True
 
 @step(u'Then the images will be downloaded "([^"]*)"')
-def then_the_images_will_be_downloaded_group1(step, group1):
-    images_path = os.path.isfile('/home/jennie/Documents/CSC184/singleton/crawler/images')
-    assert(images_path, True)
+def then_the_images_will_be_downloaded_group1(step, images):
+    images_path = os.path.isfile('/home/jennie/Documents/CSC184/singleton/crawler/images/' + images)
+    assert_equal(images_path, True)
 
 
 
