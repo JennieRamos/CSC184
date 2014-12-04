@@ -4,7 +4,14 @@ Feature: An application that download images
 
          Scenario: Download image
          Given I input a url "http://localhost/pic.html"
-         When I see an image in the url
-         Then the will be downloaded
+         When I run the crawler.py
+         Then the images will be downloaded "<images>"
+         Examples:
+              | images    |
+              | diofel.jpg|
+              | kay.jpg   |
+              | onna.jpg  |
+              | ron.jpg   |
+         
          
          
