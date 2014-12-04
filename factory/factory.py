@@ -20,7 +20,7 @@ class Connector(object):
 
   def read(self, host, path):
     """A generic method for all subclasses, reads web content."""
-    url = self.protocol + '://' + host + ':' + str(self.port) + path
+    url = self.protocol + '://' + host  + str(self.port) + path
     print 'Connecting to ', url
     return urllib2.urlopen(url, timeout=2).read()
 
