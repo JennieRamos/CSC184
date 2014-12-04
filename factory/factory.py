@@ -20,7 +20,7 @@ class Connector(object):
 
   def read(self, host, path):
     """A generic method for all subclasses, reads web content."""
-    url = self.protocol + '://' + host  + str(self.port) + path
+    url = self.protocol + '://' + host +':' + str(self.port) + path
     print 'Connecting to ', url
     return urllib2.urlopen(url, timeout=2).read()
 
@@ -104,8 +104,8 @@ class FTPPort(Port):
 
 
 if __name__ == '__main__':
-  domain = 'ftp.freebsd.org'
-  path = '/pub/FreeBSD/'
+  domain = 'localhost'#'ftp.freebsd.org'
+  path = ''#'/pub/FreeBSD/'
 
   protocol = input('Connecting to {}. Which Protocol to use? (0-http, 1-ftp): '.format(domain))
 
@@ -120,6 +120,6 @@ if __name__ == '__main__':
   try:
     content = connector.read(domain, path)
   except urllib2.URLError, e:
-    print 'Can not access resource with this method'
+    print str(e)#'Can not access resource with this method'
   else:
     print connector.parse(content)
