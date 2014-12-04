@@ -132,8 +132,8 @@ class Connector(object):
 
 
 if __name__ == '__main__':
-  domain = 'ftp.freebsd.org'
-  path = '/pub/FreeBSD/'
+  domain = 'localhost'#'ftp.freebsd.org'
+  path = ''#'/pub/FreeBSD/'
 
   protocol = input('Connecting to {}. Which Protocol to use? (0-http, 1-ftp): '.format(domain))
 
@@ -150,6 +150,6 @@ if __name__ == '__main__':
   try:
     content = connector.read(domain, path)
   except urllib2.URLError, e:
-    print 'Can not access resource with this method'
+    print str(e)#'Can not access resource with this method'
   else:
     print connector.parse(content)
