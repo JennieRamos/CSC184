@@ -2,6 +2,9 @@ import abc
 import urllib2
 from BeautifulSoup import BeautifulStoneSoup
 
+class Domain(object):
+  def __init__(self , domain):
+    self.domain = domain
 
 class Connector(object):
   """Abstract class to connect to remote resource."""
@@ -104,8 +107,8 @@ class FTPPort(Port):
 
 
 if __name__ == '__main__':
-  domain = 'localhost'#'ftp.freebsd.org'
-  path = ''#'/pub/FreeBSD/'
+  domain = 'ftp.freebsd.org'
+  path = '/pub/FreeBSD/'
 
   protocol = input('Connecting to {}. Which Protocol to use? (0-http, 1-ftp): '.format(domain))
 
@@ -120,6 +123,6 @@ if __name__ == '__main__':
   try:
     content = connector.read(domain, path)
   except urllib2.URLError, e:
-    print str(e)#'Can not access resource with this method'
+    print 'Can not access resource with this method'
   else:
     print connector.parse(content)
