@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import json
 import urllib
 import urllib2
-import pickle 
+import pickle
 
 class WeatherProvider(object):
   def __init__(self):
