@@ -13,5 +13,7 @@ def when_i_run_the_factory_py(step):
     assert True
 
 @step(u'Then the web resources is available "([^"]*)"')
-def then_the_web_resources_is_available_group1(step, group1):
-    assert True
+def then_the_web_resources_is_available_group1(step, web_resources):
+    web_resources_path = os.path.exists('/var/www/html')
+    assert_equal(web_resources_path, True)
+

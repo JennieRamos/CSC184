@@ -11,4 +11,6 @@ Feature: An application who access a web resources
                |http://google.com  |
                |http://facebook.com|
 
+        
+
          

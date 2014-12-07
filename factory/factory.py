@@ -1,6 +1,7 @@
 import abc
 import urllib2
 from BeautifulSoup import BeautifulStoneSoup
+import os
 
 class Domain(object):
   def __init__(self , domain):
