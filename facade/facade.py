@@ -4,6 +4,11 @@ import json
 import urllib
 import urllib2
 import pickle
+import os
+
+class Website(object):
+  def __init__(self , website):
+    self.website = website
 
 class WeatherProvider(object):
   def __init__(self):
