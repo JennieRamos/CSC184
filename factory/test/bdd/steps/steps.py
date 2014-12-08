@@ -17,3 +17,15 @@ def then_the_web_resources_is_available_group1(step, web_resources):
     web_resources_path = os.path.exists('/var/www/html')
     assert_equal(web_resources_path, True)
 
+@step(u'Given I visit the webpage')
+def given_i_visit_the_webpage(step):
+    assert True
+
+@step(u'Then I can see the ff. "([^"]*)"')
+def then_i_can_see_the_ff_group1(step, files):
+    files_path = os.path.exists('/home/jennie/Documents/CSC184/factory/')
+    assert_equal(files_path, True)
+
+
+
+
