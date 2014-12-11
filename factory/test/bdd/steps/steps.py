@@ -10,6 +10,7 @@ def given_i_use_the_domain_group1(step, domain):
 
 @step(u'When I run the factory.py')
 def when_i_run_the_factory_py(step):
+    #os.system('python factory.py')
     assert True
 
 @step(u'Then the web resources is available "([^"]*)"')
