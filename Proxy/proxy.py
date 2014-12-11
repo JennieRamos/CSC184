@@ -1,5 +1,12 @@
 from abc import ABCMeta, abstractmethod
 import random
+import os
+
+
+class Object(object):
+  def __init__(self , given_object):
+    self.given_object = given_object
+
 
 class AbstractSubject(object):
   """A common interface for the real and proxy objects."""
